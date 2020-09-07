@@ -1,6 +1,7 @@
 // Script Execution 
 const generateButton = document.getElementById('generateBtn')
 generateButton.addEventListener('click', notePassword)
+let minimumCount = 0;
 
 // Write password to the #password input
 function notePassword() {
@@ -24,7 +25,7 @@ function generatePassword() {
     let special = confirm("Do you want special characters in your password?");
 
 // Minimum count for numbers, lowerCases, upperCases and special characters
-    let minimumCount = 0;
+   
 
 // Special Characters    
     const specialCharacters = "!@#()<>$%^&*";
@@ -39,15 +40,15 @@ function generatePassword() {
  // Generator functions
   let functionArray = {
     getNumbers: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+      return String.fromCharCode(Math.floor(Math.random() * (128 - 8 + 1)) + 1);
     },
 
     getLowerCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+      return String.fromCharCode(Math.floor(Math.random() * (128 - 8 + 1)) + 1);
     },
 
     getUpperCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+      return String.fromCharCode(Math.floor(Math.random() * (128 - 8 + 1))+ 1);
     },
 
     getSpecialCharacters: function() {
