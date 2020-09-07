@@ -1,7 +1,7 @@
 // Script Execution 
 const generateButton = document.getElementById('generateBtn')
 generateButton.addEventListener('click', notePassword)
-let minimumCount = 0;
+
 
 // Write password to the #password input
 function notePassword() {
@@ -15,7 +15,12 @@ function notePassword() {
 //Password Generator Nested Functions
 function generatePassword() {
     let passwordLength = prompt("Please enter the number of characters you want for you new password. Password must have a minimal length of at least 8 characters and no more than 128 characters");
-
+    
+    if (passwordLength < 8 || passwordLength > 128) {
+      alert ("Password must have a minimal length of at least 8 characters and no more than 128 characters. Please try again")
+      generatePassword();
+    };
+    
     let lowerCases = confirm("Do you want lowercases in your password?");
 
     let upperCases = confirm("Do you want uppercases in your password?");
@@ -25,30 +30,30 @@ function generatePassword() {
     let special = confirm("Do you want special characters in your password?");
 
 // Minimum count for numbers, lowerCases, upperCases and special characters
-   
+    let minimumCount = 0;
 
 // Special Characters    
     const specialCharacters = "!@#()<>$%^&*";
 
 // Empty minimums for numbers, lowerCases, upperCases & specialCharacters variables
 
-  let minimumLowerCases = "";
-  let minimumUpperCases = "";
-  let minimumNumeric = "";
-  let minimumSpecialCharacters = "";
+    let minimumLowerCases = "";
+    let minimumUpperCases = "";
+    let minimumNumeric = "";
+    let minimumSpecialCharacters = "";
 
  // Generator functions
   let functionArray = {
     getNumbers: function() {
-      return String.fromCharCode(Math.floor(Math.random() * (128 - 8 + 1)) + 1);
+      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
     },
 
     getLowerCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() * (128 - 8 + 1)) + 1);
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
     },
 
     getUpperCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() * (128 - 8 + 1))+ 1);
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
 
     getSpecialCharacters: function() {
