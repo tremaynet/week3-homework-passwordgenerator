@@ -10,21 +10,40 @@
   </head>
   <body>
     <div class="container-fluid">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
+      <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
+        <header class="col-md-10 "> 
+            <h1>Tremayne's Password Generator</h1>
+        </header>
+      </nav>
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2>Create Your Password</h2>
         </div>
         <div class="card-body">
           <textarea id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         </div>
-        <div class="card-footer">
-          <button id="generateBtn" class="btn">Generate Password</button>
+
+        <div class="row">
+          <div class="card-footer col-md-12">
+            <button id="generateBtn" class="btn">Generate Password</button>
+          </div>
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container-fluid">
+         <div class="row text-center">
+            <div class="col-lg-12">
+               © 2020 - Tactis Techniques and Procedures      
+            </div>
+         </div>
+         <div class="row text-center">
+            <div class="col-lg-12">
+            <a href="mailto:tremaynet@gmail.com">Contact Tremayne Terry</a>
+            </div>  
+         </div>                         
+      </div>
+   </footer>
 
     <script src="script.js"></script>
   </body>

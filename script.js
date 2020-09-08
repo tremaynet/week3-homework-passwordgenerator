@@ -3,6 +3,8 @@ const generateButton = document.getElementById('generateBtn')
 generateButton.addEventListener('click', notePassword)
 
 
+
+
 // Write password to the #password input
 function notePassword() {
     let password = generatePassword();
@@ -18,7 +20,7 @@ function generatePassword() {
     
     if (passwordLength < 8 || passwordLength > 128) {
       alert ("Password must have a minimal length of at least 8 characters and no more than 128 characters. Please try again")
-      generatePassword();
+      return generatePassword();
     };
     
     let lowerCases = confirm("Do you want lowercases in your password?");
